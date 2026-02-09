@@ -1,0 +1,22 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/Users/magnifiquensengimana/Library/Application",
+            "args": [
+                "Support/Herd/bin/php84",
+                "/Users/magnifiquensengimana/Desktop/LaravelProjects/BKAPI/artisan",
+                "boost:mcp"
+            ]
+        },
+        "herd": {
+            "command": "/Users/magnifiquensengimana/Library/Application",
+            "args": [
+                "Support/Herd/bin/php84",
+                "/Applications/Herd.app/Contents/Resources/herd-mcp.phar"
+            ],
+            "env": {
+                "SITE_PATH": "/Users/magnifiquensengimana/Desktop/LaravelProjects/BKAPI"
+            }
+        }
+    }
+}
