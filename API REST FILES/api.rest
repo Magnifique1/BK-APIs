@@ -22,7 +22,7 @@ Accept: application/json
 #Authorization: Bearer 7|18LdQUZ3dmYouMikqtGdA8Fti91i3If7DiWXk11x73211579
 
 {
-    "amount":"25",
+    "amount":"30",
     "channel_name":"MOMO",
     "payer_code":"2",
     "payer_names":"Magnifique Nsengimana",

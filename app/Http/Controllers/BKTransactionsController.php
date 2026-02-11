@@ -306,6 +306,7 @@ class BKTransactionsController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Transaction Successful',
+                'transaction_id' => $data['internal_transaction_id'],
             ], $transStatusResponse->status());
 
         } else if ($data['transaction_status'] == 'PENDING') {
