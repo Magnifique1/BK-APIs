@@ -199,8 +199,7 @@ class BKTransactionsController extends Controller
     /**
      * @throws ConnectionException
      */
-        public function transactionStatus(Request $request)
-    {
+        public function transactionStatus(Request $request) {
 
         $telegramToken = env('TELEGRAM_BOT_TOKEN');
         $telegramChatId = env('TELEGRAM_CHAT_ID');
@@ -362,7 +361,6 @@ class BKTransactionsController extends Controller
             return $e->getMessage();
 
         }
-
 
     }
 }

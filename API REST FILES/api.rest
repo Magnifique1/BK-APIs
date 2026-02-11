@@ -4,8 +4,8 @@ Content-Type: application/json
 Accept: application/json
 
 ### AUTHENTICATION
-#POST http://localhost:8000/api/auth/authenticate
-POST https://bk-api.magiquetechnologies.tech/api/auth/authenticate
+POST http://localhost:8090/api/auth/authenticate
+#POST https://bk-api.magiquetechnologies.tech/api/auth/authenticate
 Content-Type: application/json
 Accept: application/json
 
@@ -22,7 +22,7 @@ Accept: application/json
 #Authorization: Bearer 7|18LdQUZ3dmYouMikqtGdA8Fti91i3If7DiWXk11x73211579
 
 {
-    "amount":"30",
+    "amount":"22000",
     "channel_name":"MOMO",
     "payer_code":"2",
     "payer_names":"Magnifique Nsengimana",
@@ -39,7 +39,7 @@ Accept: application/json
 #Authorization: Bearer 7|18LdQUZ3dmYouMikqtGdA8Fti91i3If7DiWXk11x73211579
 
 {
-    "transaction_id":"11202602111407556076"
+    "transaction_id":"11202602111427117290"
 }
 
 
