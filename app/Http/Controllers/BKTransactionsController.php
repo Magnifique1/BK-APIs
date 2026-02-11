@@ -309,7 +309,7 @@ class BKTransactionsController extends Controller
                 'transaction_id' => $data['internal_transaction_id'],
             ], $transStatusResponse->status());
 
-        } else if ($data['transaction_status'] == 'PENDING') {
+        } else if ($data['transaction_status'] == 'PENDING' || $data['transaction_status'] == 'INITIATED') {
 
 //            $message = "‼️ Transaction Validation Pending\n"
 //                . "Amount: " . $data['paid_mount'] . " " . $data['currency'] . "\n"
@@ -358,7 +358,9 @@ class BKTransactionsController extends Controller
             return 'success';
 
         }catch (\Exception $e){
+
             return $e->getMessage();
+
         }
 
 
