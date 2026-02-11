@@ -32,14 +32,14 @@ Authorization: Bearer 7|18LdQUZ3dmYouMikqtGdA8Fti91i3If7DiWXk11x73211579
 
 
 ### TRANSACTION STATUS
-POST http://localhost:8090/api/transaction/status
-#POST https://bk-api.magiquetechnologies.tech/api/transaction/status
+#POST http://localhost:8090/api/transaction/status
+POST https://bk-api.magiquetechnologies.tech/api/transaction/status
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 7|18LdQUZ3dmYouMikqtGdA8Fti91i3If7DiWXk11x73211579
 
 {
-    "transaction_id":"11202602110944233274"
+    "transaction_id":"11202602111211264375"
 }
 
 

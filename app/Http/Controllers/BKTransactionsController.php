@@ -333,6 +333,7 @@ class BKTransactionsController extends Controller
         return response()->json([
             'success' => false,
             'message' => 'Transaction Failed',
+            'reason' => $reason ?? '',
         ], $transStatusResponse->status());
 
     }
