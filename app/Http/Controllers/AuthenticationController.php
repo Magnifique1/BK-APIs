@@ -13,7 +13,7 @@ class AuthenticationController extends Controller
     public function login(Request $request)
     {
 
-//        return Hash::make('123456789');
+//        return Hash::make('MTechBKApi@2050');
 
         $validator = Validator::make($request->all(), array(
             'user_name' => 'required|string', // client sends this

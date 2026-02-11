@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BKTransactionsController;
 use App\Http\Controllers\CallBackController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -13,3 +14,8 @@ Route::post('/auth/authenticate', [AuthenticationController::class, 'login']);
 
 Route::post('/payment-notification', [CallBackController::class, 'paymentNotification'])->middleware('auth:sanctum');
 Route::post('/callback-url', [CallBackController::class, 'paymentCallback'])->middleware('auth:sanctum');
+
+Route::post('/payment/initiate', [BKTransactionsController::class, 'initiatePayment'])->middleware('auth:sanctum');
+Route::post('/transaction/status', [BKTransactionsController::class, 'transactionStatus'])->middleware('auth:sanctum');
+
+Route::post('/test-tg-bot', [BKTransactionsController::class, 'testTGBot']);
