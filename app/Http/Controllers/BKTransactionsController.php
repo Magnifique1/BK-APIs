@@ -24,7 +24,7 @@ class BKTransactionsController extends Controller
 
         $validated = $request->validate([
             'amount' => ['required', 'numeric', 'min:0.01'],
-            'channel_name' => ['required', 'string'], // e.g. MOMO
+            'channel_name' => ['required', 'string'],
             'payer_code' => ['required', 'string'],
             'payer_names' => ['required', 'string'],
             'phone_number' => ['required', 'string'],
