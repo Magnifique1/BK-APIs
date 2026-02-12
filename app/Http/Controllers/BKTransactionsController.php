@@ -327,6 +327,7 @@ class BKTransactionsController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Transaction Pending',
+                'response' => $body
             ], $transStatusResponse->status());
 
         }
@@ -335,6 +336,7 @@ class BKTransactionsController extends Controller
             'success' => false,
             'message' => 'Transaction Failed',
             'reason' => $reason ?? '',
+            'response' => $body
         ], $transStatusResponse->status());
 
     }

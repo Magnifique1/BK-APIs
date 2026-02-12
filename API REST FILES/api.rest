@@ -22,11 +22,11 @@ Accept: application/json
 #Authorization: Bearer 7|18LdQUZ3dmYouMikqtGdA8Fti91i3If7DiWXk11x73211579
 
 {
-    "amount":"22000",
+    "amount":"20",
     "channel_name":"MOMO",
     "payer_code":"2",
-    "payer_names":"Magnifique Nsengimana",
-    "phone_number":"250798654434",
+    "payer_names":"Daniel Ndungo",
+    "phone_number":"250795586806",
     "payer_email":"magiquepryce@gmail.com"
 }
 
@@ -39,7 +39,7 @@ Accept: application/json
 #Authorization: Bearer 7|18LdQUZ3dmYouMikqtGdA8Fti91i3If7DiWXk11x73211579
 
 {
-    "transaction_id":"11202602121340105818"
+    "transaction_id":"11202602121622425225"
 }
 
 
