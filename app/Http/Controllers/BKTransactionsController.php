@@ -307,6 +307,7 @@ class BKTransactionsController extends Controller
                 'success' => true,
                 'message' => 'Transaction Successful',
                 'transaction_id' => $data['internal_transaction_id'],
+                'response' => $body
             ], $transStatusResponse->status());
 
         } else if ($data['transaction_status'] == 'PENDING' || $data['transaction_status'] == 'INITIATED') {
