@@ -111,7 +111,8 @@ class BKTransactionsController extends Controller
                 'Accept' => 'application/json',
             ])->post('https://urubutopay.rw/api/v2/payment/transaction/status', $payloadInsufficientFundsCheck);
 
-            $transaction_statusIFC = $checkInsufficientFunds->json()['data']['transaction_status'];
+            $json = $checkInsufficientFunds->json();
+            $transaction_statusIFC = data_get($json, 'data.transaction_status', 'UNKNOWN');
 
             if($transaction_statusIFC == 'FAILED'){
 
@@ -125,7 +126,7 @@ class BKTransactionsController extends Controller
                         'updated_at' => now(),
                     ]);
 
-                $bodyIFC = $transaction_statusIFC->json();
+                $bodyIFC = $checkInsufficientFunds->json();
                 $dataIFC = $bodyIFC['data'] ?? [];
 
                 DB::table('bk_transactions_status')->insert([
@@ -154,12 +155,12 @@ class BKTransactionsController extends Controller
                 ]);
 
                 $message = "❌ Payment Initiated Failed\n"
-                    . "Amount: " . ($data['paid_mount'] ?? $payload['amount']) . " " . ($data['currency'] ?? 'RWF') . "\n"
-                    . "Payer: " . ($data['payer_names'] ?? $validated['payer_names']) . "\n"
-                    . "Phone: " . ($data['payer_phone_number'] ?? $validated['phone_number']) . "\n"
+                    . "Amount: " . ($dataIFC['amount']) . " " . ($dataIFC['currency'] ?? 'RWF') . "\n"
+                    . "Payer: " . ($dataIFC['payer_names'] ) . "\n"
+                    . "Phone: " . ($dataIFC['phone_number']) . "\n"
                     . "Status: " . $reasonIFC . "\n"
-                    . "External Ref: " . ($data['external_transaction_ref_number'] ?? $transactionId) . "\n"
-                    . "Internal Ref: " . ($data['internal_transaction_ref_number'] ?? '-');
+                    . "External Ref: " . ($dataIFC['payment_channel_transaction_ref_number']) . "\n"
+                    . "Internal Ref: " . ($dataIFC['internal_transaction_id'] ?? '-');
 
                 Http::post("https://api.telegram.org/bot{$telegramToken}/sendMessage", [
                     'chat_id' => $telegramChatId,

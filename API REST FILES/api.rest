@@ -1,10 +1,10 @@
 ### TEST TELEGRAM BOT
-POST http://localhost:8090/api/test-tg-bot
+POST http://localhost:8000/api/test-tg-bot
 Content-Type: application/json
 Accept: application/json
 
 ### AUTHENTICATION
-POST http://localhost:8090/api/auth/authenticate
+POST http://localhost:8000/api/auth/authenticate
 #POST https://bk-api.magiquetechnologies.tech/api/auth/authenticate
 Content-Type: application/json
 Accept: application/json
@@ -15,7 +15,7 @@ Accept: application/json
 }
 
 ### INITIATE PAYMENTS
-#POST http://localhost:8090/api/payment/initiate
+#POST http://localhost:8000/api/payment/initiate
 POST https://bk-api.magiquetechnologies.tech/api/payment/initiate
 Content-Type: application/json
 Accept: application/json
@@ -32,14 +32,14 @@ Accept: application/json
 
 
 ### TRANSACTION STATUS
-#POST http://localhost:8090/api/transaction/status
+#POST http://localhost:8000/api/transaction/status
 POST https://bk-api.magiquetechnologies.tech/api/transaction/status
 Content-Type: application/json
 Accept: application/json
 #Authorization: Bearer 7|18LdQUZ3dmYouMikqtGdA8Fti91i3If7DiWXk11x73211579
 
 {
-    "transaction_id":"11202602111427117290"
+    "transaction_id":"11202602121340105818"
 }
 
 
